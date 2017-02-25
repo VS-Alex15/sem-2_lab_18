@@ -106,11 +106,4 @@ while not vertexes.empty(): # обход вершин в G^T в порядке �
     vertex = vertexes.front()
     dfs_reverse(vertex, graph_T, used)
 
-used = set()
-components = 0
-for vertex in range(N):
-    if vertex not in used:
-        dfs_straight(vertex, graph_full, used)
-        components += 1
-
-print(components,len(linked_components))
+print(*linked_components) # вывод массива множеств вершин сильносвязных компонент
