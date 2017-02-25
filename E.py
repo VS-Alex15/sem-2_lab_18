@@ -89,4 +89,12 @@ while not vertexes.empty():
     linked_components.append(set())
     vertex = vertexes.front()
     dfs_reverse(vertex, graph_T, used)
-print(len(linked_components))
+
+used = set()
+components = 0
+for vertex in range(N):
+    if vertex not in used:
+        dfs_straight(vertex, graph_full, used)
+        components += 1
+
+print(components,len(linked_components))
